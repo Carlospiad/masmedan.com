@@ -5,9 +5,9 @@ if ( isset( $_POST['newsletter_submit'] ) ) {
 
 	// Check email input field
 	if ( trim( $_POST['newsletter_email'] ) === '' )
-		$newsletter_errors[] = 'Email address is required';
+		$newsletter_errors[] = 'Se requiere una direcci—n de correo';
 	elseif ( !preg_match( "/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,4}$/i", trim( $_POST['newsletter_email'] ) ) )
-		$newsletter_errors[] = 'Email address is not valid'; 
+		$newsletter_errors[] = 'La direcci—n de correo no es v‡lida'; 
 	else
 		$newsletter_email = trim( $_POST['newsletter_email'] );
         $newsletter_nombre = trim( $_POST['newsletter_nombre'] );
@@ -16,12 +16,12 @@ if ( isset( $_POST['newsletter_submit'] ) ) {
 	
 	// Send email if no input errors
 	if ( empty( $newsletter_errors ) ) {
-		$email_to = "gregesf@gmail.com"; // Change to your own email address
+		$email_to = "carlospiad@gmail.com"; // Change to your own email address
 		$subject = "Formulario Contacto Web - " . $newsletter_nombre;
-		$body = "Mensaje enviado por: " . $newsletter_nombre . "\r\n" . "Email: " . $newsletter_email . "\r\n" . "Teléfono: " . $newsletter_tlf . "\r\n" . "Mensaje: " . $newsletter_mensaje . "\r\n";
+		$body = "Mensaje enviado por: " . $newsletter_nombre . "\r\n" . "Email: " . $newsletter_email . "\r\n" . "TelŽfono: " . $newsletter_tlf . "\r\n" . "Mensaje: " . $newsletter_mensaje . "\r\n";
 		$headers = "Mensaje formulario Web<" . $email_to . ">\r\nReply-To: " . $newsletter_email . "\r\n";
 		mail( $email_to, $subject, $body, $headers );
-		echo 'Gracias por contactar con EMPEÑOS MAS ME DAN';
+		echo 'Gracias por contactar con EMPE„OS MAS ME DAN';
 	} else {
 		echo 'Por favor regrese y corrija los siguientes errores:<br />';
 		foreach ( $newsletter_errors as $error ) {
