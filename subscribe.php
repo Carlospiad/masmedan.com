@@ -18,7 +18,7 @@ if ( isset( $_POST['newsletter_submit'] ) ) {
 	if ( empty( $newsletter_errors ) ) {
 		$email_to = "carlospiad@gmail.com"; // Change to your own email address
 		$subject = "Formulario Contacto Web - " . $newsletter_nombre;
-		$body = "Mensaje enviado por: " . $newsletter_nombre . "\r\n" . "Email: " . $newsletter_email . "\r\n" . "Teléfono: " . $newsletter_tlf . "\r\n" . "Mensaje: " . $newsletter_mensaje . "\r\n";
+		$body = "Mensaje enviado por: " . $newsletter_nombre . "\r\n" . "Email: " . $newsletter_email . "\r\n" . "Tel: " . $newsletter_tlf . "\r\n" . "Mensaje: " . $newsletter_mensaje . "\r\n";
 		$headers = "Mensaje formulario Web<" . $email_to . ">\r\nReply-To: " . $newsletter_email . "\r\n";
 		mail( $email_to, $subject, $body, $headers );
 		echo 'Gracias por contactar con EMPEÑOS MAS ME DAN';
